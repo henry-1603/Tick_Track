@@ -1,0 +1,28 @@
+{% extends 'base/main.html' %}
+{% block content %}
+
+<h1>{{task.complete}}</h1>
+{% if task.complete %}
+<h1>Hey</h1>
+{% else %}
+<h1>Ho</h1>
+{% endif %}
+
+
+<script>
+    function fun(value) {
+       console.log("value : " ,value)
+if (value == undefined) {
+    value = false;
+}
+else{
+    value = true;
+}
+
+console.log("value_after: " ,value)
+}
+</script>
+<button onclick=fun({{task.complete}})>Complete</button>
+<h1>{{task.complete}}</h1>
+
+{% endblock content %}
